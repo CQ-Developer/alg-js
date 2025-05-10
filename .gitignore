@@ -1,0 +1,6 @@
+# vscode
+.vscode
+.devcontainer
+
+# js
+node_modules
