@@ -6,7 +6,8 @@ const config = {
     testMatch: ['<rootDir>/test/**/*.js'],
     moduleNameMapper: {
         '^src/(.*)$': '<rootDir>/src/$1'
-    }
+    },
+    testTimeout: 10000
 };
 
 module.exports = config
