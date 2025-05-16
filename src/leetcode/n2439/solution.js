@@ -1,7 +1,7 @@
 /**
  * @param {number[]} nums
  */
-function minimizeArrayValue(nums) {
+function minimizeArrayValueA(nums) {
 
     /**
      * @param {number} mid
@@ -26,4 +26,16 @@ function minimizeArrayValue(nums) {
     return r;
 }
 
-module.exports = minimizeArrayValue
+/**
+ * @param {number[]} nums
+ */
+function minimizeArrayValueB(nums) {
+    let [s, r] = [nums[0], nums[0]];
+    for (let i = 1; i < nums.length; i++) {
+        s += nums[i];
+        r = Math.max(r, Math.ceil(s / (i + 1)));
+    }
+    return r;
+}
+
+module.exports = { minimizeArrayValueA, minimizeArrayValueB }
