@@ -1,3 +1,5 @@
+const { PriorityQueue } = require('@datastructures-js/priority-queue');
+
 /**
  * @param {number[][]} grid
  * @returns {number}
@@ -82,4 +84,31 @@ function swimInWaterB(grid) {
     return r;
 }
 
-module.exports = { swimInWaterA, swimInWaterB };
+/**
+ * @param {number[][]} grid
+ * @returns {number}
+ */
+function swimInWaterC(grid) {
+    let ans = 0;
+    const [m, n] = [grid.length, grid[0].length];
+    const heap = new PriorityQueue((a, b) => a[0] - b[0]);
+    heap.push([grid[0][0], 0, 0]);
+    const vist = Array.from({ length: m }, () => Array.from({ length: n }, () => false));
+    vist[0][0] = true;
+    while (!heap.isEmpty()) {
+        const [g, i, j] = heap.pop();
+        ans = Math.max(ans, g);
+        if (i == m - 1 && j == n - 1) {
+            break;
+        }
+        for (const [x, y] of [[i + 1, j], [i - 1, j], [i, j + 1], [i, j - 1]]) {
+            if (x >= 0 && x < m && y >= 0 && y < n && !vist[x][y]) {
+                heap.push([grid[x][y], x, y]);
+                vist[x][y] = true;
+            }
+        }
+    }
+    return ans;
+}
+
+module.exports = { swimInWaterA, swimInWaterB, swimInWaterC };
