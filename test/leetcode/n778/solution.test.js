@@ -1,4 +1,4 @@
-const { swimInWaterA } = require('src/leetcode/n778/solution');
+const { swimInWaterA, swimInWaterB } = require('src/leetcode/n778/solution');
 
 const data = [
     { grid: [[0, 2], [1, 3]], res: 3 },
@@ -10,4 +10,5 @@ const fn = test.each(data);
 
 fn('swimInWater', ({ grid, res }) => {
     expect(swimInWaterA(grid)).toBe(res);
+    expect(swimInWaterB(grid)).toBe(res);
 });

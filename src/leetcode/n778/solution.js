@@ -44,4 +44,42 @@ function swimInWaterA(grid) {
     return r;
 }
 
-module.exports = { swimInWaterA }
+/**
+ * @param {number[][]} grid
+ */
+function swimInWaterB(grid) {
+    const [m, n] = [grid.length, grid[0].length];
+
+    /**
+     * @param {number} mx
+     */
+    function check(mx) {
+        const vis = Array.from({ length: m }, () => Array.from({ length: n }, () => false));
+        vis[0][0] = true;
+        const que = [[0, 0]];
+        while (que.length > 0) {
+            const [i, j] = que.shift();
+            for (const [a, b] of [[0, 1], [0, -1], [1, 0], [-1, 0]]) {
+                const [x, y] = [i + a, j + b];
+                if (x >= 0 && x < m && y >= 0 && y < n && !vis[x][y] && grid[x][y] <= mx) {
+                    que.push([x, y]);
+                    vis[x][y] = true;
+                }
+            }
+        }
+        return vis[m - 1][n - 1];
+    }
+
+    let [l, r] = [grid[0][0], Math.max(...[].concat(...grid))];
+    while (l < r) {
+        const mid = l + Math.floor((r - l) / 2);
+        if (check(mid)) {
+            r = mid;
+        } else {
+            l = mid + 1;
+        }
+    }
+    return r;
+}
+
+module.exports = { swimInWaterA, swimInWaterB };
