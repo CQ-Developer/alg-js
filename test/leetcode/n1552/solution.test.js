@@ -1,4 +1,4 @@
-const { maxDistance } = require('src/leetcode/n1552/solution');
+const { maxDistance, maxDistanceA } = require('src/leetcode/n1552/solution');
 
 const data = [
     { position: [1, 2, 3, 4, 7], m: 3, result: 3 },
@@ -9,4 +9,8 @@ const f = test.each(data);
 
 f('maxDistance($position, $m)', ({ position, m }) => {
     expect(() => maxDistance(position, m)).toThrow();
+});
+
+f('maxDistance($position, $m)', ({ position, m, result }) => {
+    expect(maxDistanceA(position, m)).toBe(result);
 });
