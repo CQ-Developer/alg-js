@@ -1,4 +1,4 @@
-const { maximumSafenessFactor } = require('src/leetcode/n2812/solution');
+const { maximumSafenessFactor, maximumSafenessFactorA } = require('src/leetcode/n2812/solution');
 
 const data = [
     { grid: [[1, 0, 0], [0, 0, 0], [0, 0, 1]], result: 0 },
@@ -10,4 +10,8 @@ const f = test.each(data);
 
 f('maximumSafenessFactor($grid)', ({ grid }) => {
     expect(() => maximumSafenessFactor(grid)).toThrow();
+});
+
+f('maximumSafenessFactorA($grid)', ({ grid, result }) => {
+    expect(maximumSafenessFactorA(grid)).toBe(result);
 });
