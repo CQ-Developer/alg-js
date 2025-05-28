@@ -48,12 +48,14 @@ function swimInWaterA(grid) {
 
 /**
  * @param {number[][]} grid
+ * @returns {number}
  */
 function swimInWaterB(grid) {
     const [m, n] = [grid.length, grid[0].length];
 
     /**
      * @param {number} mx
+     * @returns {boolean}
      */
     function check(mx) {
         const vis = Array.from({ length: m }, () => Array.from({ length: n }, () => false));

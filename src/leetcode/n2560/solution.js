@@ -3,10 +3,12 @@
  *
  * @param {number[]} nums
  * @param {number} k
+ * @returns {number}
  */
 function minCapabilityA(nums, k) {
     /**
      * @param {number} mx
+     * @returns {boolean}
      */
     function check(mx) {
         let [f1, f2] = [0, 0];

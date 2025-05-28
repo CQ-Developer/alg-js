@@ -1,4 +1,5 @@
 /**
+ * @abstract
  * @param {string} s
  * @param {number} numOps
  * @returns {number}

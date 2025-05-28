@@ -1,4 +1,5 @@
 /**
+ * @abstract
  * @param {number[]} stations
  * @param {number} r
  * @param {number} k

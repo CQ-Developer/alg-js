@@ -1,6 +1,7 @@
 const { Queue } = require('@datastructures-js/queue');
 
 /**
+ * @abstract
  * @param {number[][]} grid
  * @returns {number}
  */
@@ -16,6 +17,7 @@ function maximumSafenessFactorA(grid) {
     const n = grid.length;
     /**
      * @param {number} m
+     * @returns {boolean}
      */
     function check(m) {
         const vis = Array.from({ length: n }, () => Array.from({ length: n }, () => false));

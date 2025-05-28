@@ -1,4 +1,5 @@
 /**
+ * @abstract
  * @param {number[]} position
  * @param {number} m
  * @returns {number}
@@ -15,6 +16,7 @@ function maxDistance(position, m) {
 function maxDistanceA(position, m) {
     /**
      * @param {number} mid
+     * @returns {boolean}
      */
     function check(mid) {
         let [pre, cnt] = [-mid, 0];

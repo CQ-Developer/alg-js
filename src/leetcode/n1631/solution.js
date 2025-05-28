@@ -82,6 +82,7 @@ function minimumEffortPathB(heights) {
 /**
  * dijkstra
  * @param {number[][]} heights
+ * @returns {number}
  */
 function minimumEffortPathC(heights) {
 

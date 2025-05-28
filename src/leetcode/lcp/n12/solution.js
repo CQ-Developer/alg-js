@@ -1,4 +1,5 @@
 /**
+ * @abstract
  * @param {number[]} time
  * @param {number} m
  * @returns {number}

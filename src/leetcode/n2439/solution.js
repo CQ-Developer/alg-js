@@ -1,10 +1,12 @@
 /**
  * @param {number[]} nums
+ * @returns {number}
  */
 function minimizeArrayValueA(nums) {
 
     /**
      * @param {number} mid
+     * @returns {boolean}
      */
     function check(mid) {
         let rest = 0;
@@ -28,6 +30,7 @@ function minimizeArrayValueA(nums) {
 
 /**
  * @param {number[]} nums
+ * @returns {boolean}
  */
 function minimizeArrayValueB(nums) {
     let [s, r] = [nums[0], nums[0]];
