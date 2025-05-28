@@ -1,7 +1,7 @@
 /**
  * @type {import('jest').Config}
  */
-const config = {
+module.exports = {
     verbose: true,
     testMatch: ['<rootDir>/test/**/*.js'],
     moduleNameMapper: {
@@ -9,5 +9,3 @@ const config = {
     },
     testTimeout: 10000
 };
-
-module.exports = config
