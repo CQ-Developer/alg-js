@@ -1,6 +1,8 @@
 const { Queue } = require('@datastructures-js/queue');
+
 /**
  * @param {number[][]} grid
+ * @returns {number}
  */
 function maximumSafenessFactor(grid) {
     throw new Error('skip');
@@ -61,4 +63,61 @@ function maximumSafenessFactorA(grid) {
     return r;
 }
 
-module.exports = { maximumSafenessFactor, maximumSafenessFactorA };
+/**
+ * @param {number[][]} grid
+ * @returns {number}
+ */
+function maximumSafenessFactorB(grid) {
+    const n = grid.length;
+    const f = Array.from({ length: n * n }, (_, i) => i);
+    /**
+     * @param {number} x
+     * @returns {number}
+     */
+    function find(x) {
+        if (f[x] != x) {
+            f[x] = find(f[x]);
+        }
+        return f[x];
+    }
+    /** @type {number[][]} */
+    let que = [];
+    const dis = Array.from({ length: n }, () => Array.from({ length: n }, () => -1));
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            if (grid[i][j] == 1) {
+                que.push([i, j]);
+                dis[i][j] = 0;
+            }
+        }
+    }
+    const groups = [que];
+    while (que.length) {
+        const tmp = que;
+        que = [];
+        for (const [i, j] of tmp) {
+            for (const [x, y] of [[i - 1, j], [i + 1, j], [i, j - 1], [i, j + 1]]) {
+                if (0 <= x && x < n && 0 <= y && y < n && dis[x][y] == -1) {
+                    que.push([x, y]);
+                    dis[x][y] = groups.length;
+                }
+            }
+        }
+        groups.push(que);
+    }
+    for (let g = groups.length - 2; g > 0; g--) {
+        for (const [i, j] of groups[g]) {
+            for (const [x, y] of [[i - 1, j], [i + 1, j], [i, j - 1], [i, j + 1]]) {
+                if (0 <= x && x < n && 0 <= y && y < n && dis[x][y] >= dis[i][j]) {
+                    f[find(x * n + y)] = find(i * n + j);
+                }
+            }
+        }
+        if (find(0) == find(n * n - 1)) {
+            return g;
+        }
+    }
+    return 0;
+}
+
+module.exports = { maximumSafenessFactor, maximumSafenessFactorA, maximumSafenessFactorB };

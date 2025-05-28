@@ -1,4 +1,4 @@
-const { maximumSafenessFactor, maximumSafenessFactorA } = require('src/leetcode/n2812/solution');
+const { maximumSafenessFactor, maximumSafenessFactorA, maximumSafenessFactorB } = require('src/leetcode/n2812/solution');
 
 const data = [
     { grid: [[1, 0, 0], [0, 0, 0], [0, 0, 1]], result: 0 },
@@ -14,4 +14,8 @@ f('maximumSafenessFactor($grid)', ({ grid }) => {
 
 f('maximumSafenessFactorA($grid)', ({ grid, result }) => {
     expect(maximumSafenessFactorA(grid)).toBe(result);
+});
+
+f('maximumSafenessFactorB($grid)', ({ grid, result }) => {
+    expect(maximumSafenessFactorB(grid)).toBe(result);
 });
