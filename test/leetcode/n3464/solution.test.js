@@ -1,4 +1,4 @@
-const { maxDistance } = require('src/leetcode/n3464/solution');
+const { maxDistance, maxDistanceA } = require('src/leetcode/n3464/solution');
 
 const data = [
     { side: 2, points: [[0, 2], [2, 0], [2, 2], [0, 0]], k: 4, ans: 2 },
@@ -8,6 +8,10 @@ const data = [
 
 const f = test.each(data);
 
-f('maxDistance($side, $points, $k)', ({ side, points, k, ans }) => {
-    expect(maxDistance(side, points, k)).toBe(ans);
+f('maxDistance($side, $points, $k)', ({ side, points, k }) => {
+    expect(() => maxDistance(side, points, k)).toThrow('skip');
+});
+
+f('maxDistanceA($side, $points, $k)', ({ side, points, k, ans }) => {
+    expect(maxDistanceA(side, points, k)).toBe(ans);
 });
