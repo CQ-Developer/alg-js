@@ -1,4 +1,4 @@
-const { kthSmallest, kthSmallestA, kthSmallestB } = require('src/leetcode/n378/solution');
+const { kthSmallest, kthSmallestA, kthSmallestB, kthSmallestC } = require('src/leetcode/n378/solution');
 
 const data = [
     { matrix: [[1, 5, 9], [10, 11, 13], [12, 13, 15]], k: 8, ans: 13 },
@@ -17,4 +17,8 @@ fun('kthSmallestA($matrix, $k)', ({ matrix, k, ans }) => {
 
 fun('kthSmallestB($matrix, $k)', ({ matrix, k, ans }) => {
     expect(kthSmallestB(matrix, k)).toBe(ans);
+});
+
+fun('kthSmallestC($matrix, $k)', ({ matrix, k, ans }) => {
+    expect(kthSmallestC(matrix, k)).toBe(ans);
 });

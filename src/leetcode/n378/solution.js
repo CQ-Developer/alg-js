@@ -41,4 +41,41 @@ function kthSmallestB(matrix, k) {
     return heap.dequeue()[2];
 }
 
-module.exports = { kthSmallest, kthSmallestA, kthSmallestB };
+/**
+ * @param {number[][]} matrix
+ * @param {number} k
+ * @returns {number}
+ */
+function kthSmallestC(matrix, k) {
+    const n = matrix.length;
+
+    /**
+     * @param {number} top
+     * @returns {boolean}
+     */
+    function check(top) {
+        let cnt = 0;
+        for (let [i, j] = [n - 1, 0]; i >= 0 && j < n;) {
+            if (matrix[i][j] <= top) {
+                cnt += i + 1;
+                j++;
+            } else {
+                i--;
+            }
+        }
+        return cnt >= k;
+    }
+
+    let [l, r] = [matrix[0][0], matrix[n - 1][n - 1]];
+    while (l <= r) {
+        const mid = l + Math.floor((r - l) / 2);
+        if (check(mid)) {
+            r = mid - 1;
+        } else {
+            l = mid + 1;
+        }
+    }
+    return l;
+}
+
+module.exports = { kthSmallest, kthSmallestA, kthSmallestB, kthSmallestC };
