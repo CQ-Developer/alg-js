@@ -1,4 +1,4 @@
-const { smallestDistancePair } = require('src/leetcode/n719/solution');
+const { smallestDistancePair, smallestDistancePairA, smallestDistancePairB } = require('src/leetcode/n719/solution');
 
 const cases = [
     { nums: [1, 3, 1], k: 1, ans: 0 },
@@ -8,6 +8,14 @@ const cases = [
 
 const f = test.each(cases);
 
-f('smallestDistancePair($nums, $k)', ({ nums, k, ans }) => {
-    expect(smallestDistancePair(nums, k)).toBe(ans);
+f('smallestDistancePair($nums, $k)', ({ nums, k }) => {
+    expect(() => smallestDistancePair(nums, k)).toThrow('skip');
+});
+
+f('smallestDistancePairA($nums, $k)', ({ nums, k, ans }) => {
+    expect(smallestDistancePairA(nums, k)).toBe(ans);
+});
+
+f('smallestDistancePairB($nums, $k)', ({ nums, k, ans }) => {
+    expect(smallestDistancePairB(nums, k)).toBe(ans);
 });
