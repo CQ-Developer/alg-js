@@ -3,7 +3,7 @@
  */
 module.exports = {
     verbose: true,
-    testMatch: ['<rootDir>/test/**/*.js'],
+    testMatch: ['<rootDir>/test/**/*.test.js'],
     moduleNameMapper: {
         '^src/(.*)$': '<rootDir>/src/$1'
     },
