@@ -27,4 +27,45 @@ function kthSmallestA(mat, k) {
     return res.at(-1);
 }
 
-module.exports = { kthSmallest, kthSmallestA };
+/**
+ * @param {number[][]} mat
+ * @param {number} k
+ * @returns {number}
+ */
+function kthSmallestB(mat, k) {
+    /**
+     * @param {number} i
+     * @param {number} rest
+     * @returns {number}
+     */
+    function check(i, rest) {
+        if (i == mat.length) {
+            return 1;
+        }
+        let ans = 0;
+        for (const x of mat[i]) {
+            if (x - mat[i][0] > rest || ans >= k) {
+                break;
+            }
+            ans += check(i + 1, rest - x + mat[i][0]);
+        }
+        return ans;
+    }
+    let [l, r] = [0, 0];
+    for (const row of mat) {
+        l += row.at(0);
+        r += row.at(-1);
+    }
+    const base = l;
+    while (l <= r) {
+        const mid = l + Math.floor((r - l) / 2);
+        if (check(0, mid - base) >= k) {
+            r = mid - 1;
+        } else {
+            l = mid + 1;
+        }
+    }
+    return l;
+}
+
+module.exports = { kthSmallest, kthSmallestA, kthSmallestB };
