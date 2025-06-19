@@ -1,3 +1,5 @@
+const { MinPriorityQueue } = require("@datastructures-js/priority-queue");
+
 /**
  * @abstract
  * @param {number[][]} mat
@@ -68,4 +70,38 @@ function kthSmallestB(mat, k) {
     return l;
 }
 
-module.exports = { kthSmallest, kthSmallestA, kthSmallestB };
+/**
+ * @param {number[][]} mat
+ * @param {number} k
+ * @returns {number}
+ */
+function kthSmallestC(mat, k) {
+    /**
+     * @param {number[]} a
+     * @param {number[]} b
+     * @returns {number[]}
+     */
+    function kthSmallestPairs(a, b) {
+        const heap = new MinPriorityQueue((arr) => arr[0]);
+        heap.enqueue([a[0] + b[0], 0, 0]);
+        const ans = [];
+        while (!heap.isEmpty() && ans.length < k) {
+            const [_, i, j] = heap.dequeue();
+            ans.push(a[i] + b[j]);
+            if (j == 0 && i + 1 < a.length) {
+                heap.enqueue([a[i + 1] + b[0], i + 1, 0]);
+            }
+            if (j + 1 < b.length) {
+                heap.enqueue([a[i] + b[j + 1], i, j + 1]);
+            }
+        }
+        return ans;
+    }
+    let ans = mat[0].slice(0, k);
+    for (const row of mat.slice(1)) {
+        ans = kthSmallestPairs(ans, row);
+    }
+    return ans.at(-1);
+}
+
+module.exports = { kthSmallest, kthSmallestA, kthSmallestB, kthSmallestC };
