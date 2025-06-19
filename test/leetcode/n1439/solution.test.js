@@ -1,4 +1,4 @@
-const { kthSmallest } = require('src/leetcode/n1439/solution');
+const { kthSmallest, kthSmallestA } = require('src/leetcode/n1439/solution');
 
 const data = [
     {
@@ -40,4 +40,8 @@ const fun = test.each(data);
 
 fun('kthSmallest($mat, $k)', ({ mat, k }) => {
     expect(() => kthSmallest(mat, k)).toThrow('skip');
+});
+
+fun('kthSmallestA($mat, $k)', ({ mat, k, res }) => {
+    expect(kthSmallestA(mat, k)).toBe(res);
 });
