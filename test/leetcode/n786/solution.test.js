@@ -1,4 +1,4 @@
-const { kthSmallestPrimeFraction, kthSmallestPrimeFractionA } = require('src/leetcode/n786/solution');
+const { kthSmallestPrimeFraction, kthSmallestPrimeFractionA, kthSmallestPrimeFractionB } = require('src/leetcode/n786/solution');
 
 const data = [
     { arr: [1, 2, 3, 5], k: 3, ans: [2, 5] },
@@ -13,4 +13,8 @@ f('kthSmallestPrimeFraction($arr, $k)', ({ arr, k }) => {
 
 f('kthSmallestPrimeFractionA($arr, $k)', ({ arr, k, ans }) => {
     expect(kthSmallestPrimeFractionA(arr, k)).toEqual(ans);
+});
+
+f('kthSmallestPrimeFractionB($arr, $k)', ({ arr, k, ans }) => {
+    expect(kthSmallestPrimeFractionB(arr, k)).toEqual(ans);
 });

@@ -30,4 +30,33 @@ function kthSmallestPrimeFractionA(arr, k) {
     return [arr[i], arr[j]];
 }
 
-module.exports = { kthSmallestPrimeFraction, kthSmallestPrimeFractionA };
+/**
+ * @param {number[]} arr
+ * @param {number} k
+ * @returns {number[]}
+ */
+function kthSmallestPrimeFractionB(arr, k) {
+    let [l, r] = [0, 1];
+    while (true) {
+        const mid = l + (r - l) / 2;
+        let [i, x, y, cnt] = [0, 0, 1, 0];
+        for (const v of arr.slice(1)) {
+            for (; arr[i] / v < mid; i++) {
+                if (arr[i] * y > x * v) {
+                    [x, y] = [arr[i], v];
+                }
+            }
+            cnt += i;
+        }
+        if (cnt == k) {
+            return [x, y];
+        }
+        if (cnt < k) {
+            l = mid;
+        } else {
+            r = mid;
+        }
+    }
+}
+
+module.exports = { kthSmallestPrimeFraction, kthSmallestPrimeFractionA, kthSmallestPrimeFractionB };
