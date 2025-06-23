@@ -56,14 +56,14 @@ function findKthSmallestA(coins, k) {
         to: for (let s = 1; s < (1 << n); s++) {
             let y = 1;
             for (let i = 0; i < n; i++) {
-                if ((1 << i & s) != 0) {
+                if (1 << i & s) {
                     y = lcm(coins[i], y);
                     if (y > x) {
                         continue to;
                     }
                 }
             }
-            cnt += (bitCount(s) & 1) == 1 ? Math.floor(x / y) : -Math.floor(x / y);
+            cnt += bitCount(s) & 1 ? Math.floor(x / y) : -Math.floor(x / y);
         }
         return cnt;
     }
@@ -86,7 +86,16 @@ function findKthSmallestA(coins, k) {
  * @returns {number}
  */
 function findKthSmallestB(coins, k) {
-    const n = coins.length;
+    coins.sort((a, b) => a - b);
+    let n = 1;
+    to: for (const x of coins) {
+        for (const y of coins.slice(0, n)) {
+            if (x % y == 0) {
+                continue to;
+            }
+        }
+        coins[n++] = x;
+    }
     const subset = new Array(1 << n).fill(1);
     for (let i = 0; i < n; i++) {
         const status = 1 << i;
@@ -102,7 +111,7 @@ function findKthSmallestB(coins, k) {
     function check(x) {
         let cnt = 0;
         for (let s = 1; s < (1 << n); s++) {
-            cnt += (bitCount(s) & 1) == 1 ? Math.floor(x / subset[s]) : -Math.floor(x / subset[s]);
+            cnt += bitCount(s) & 1 ? Math.floor(x / subset[s]) : -Math.floor(x / subset[s]);
         }
         return cnt;
     }
