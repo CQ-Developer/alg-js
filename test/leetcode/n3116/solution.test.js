@@ -1,4 +1,4 @@
-const { findKthSmallest } = require('src/leetcode/n3116/solution');
+const { findKthSmallest, findKthSmallestA } = require('src/leetcode/n3116/solution');
 
 const data = [
     { coins: [3, 6, 9], k: 3, ans: 9 },
@@ -10,4 +10,8 @@ const f = test.each(data);
 
 f('findKthSmallest($coins, $k)', ({ coins, k }) => {
     expect(() => findKthSmallest(coins, k)).toThrow('skip');
+});
+
+f('findKthSmallestA($coins, $k)', ({ coins, k, ans }) => {
+    expect(findKthSmallestA(coins, k)).toBe(ans);
 });
