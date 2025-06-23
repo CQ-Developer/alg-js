@@ -17,11 +17,12 @@ function kthSmallestPrimeFraction(arr, k) {
  */
 function kthSmallestPrimeFractionA(arr, k) {
     const heap = new PriorityQueue((a, b) => arr[a[0]] * arr[b[1]] - arr[b[0]] * arr[a[1]]);
-    for (let j = 1; j < arr.length; j++) {
-        heap.enqueue([0, j]);
-    }
+    heap.enqueue([0, arr.length - 1]);
     for (let _ = 1; _ < k; _++) {
         const [i, j] = heap.dequeue();
+        if (i == 0 && j > 0) {
+            heap.enqueue([0, j - 1]);
+        }
         if (i + 1 < j) {
             heap.enqueue([i + 1, j]);
         }
