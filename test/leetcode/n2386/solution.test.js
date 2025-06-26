@@ -1,4 +1,4 @@
-const { kSum } = require('src/leetcode/n2386/solution');
+const { kSum, kSumA } = require('src/leetcode/n2386/solution');
 
 const data = [
     { nums: [2, 4, -2], k: 5, ans: 2 },
@@ -9,3 +9,5 @@ const data = [
 const f = test.each(data);
 
 f('kSum($nums, $k)', ({ nums, k }) => expect(() => kSum(nums, k)).toThrow('skip'));
+
+f('kSumA($nums, $k)', ({ nums, k, ans }) => expect(kSumA(nums, k)).toBe(ans));
