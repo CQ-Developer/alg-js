@@ -1,4 +1,4 @@
-const { rangeSum, rangeSumA } = require('src/leetcode/n1508/solution');
+const { rangeSum, rangeSumA, rangeSumB } = require('src/leetcode/n1508/solution');
 
 const data = [
     { nums: [1, 2, 3, 4], n: 4, left: 1, right: 5, ans: 13 },
@@ -14,4 +14,8 @@ f('rangeSum($nums, $n, $left, $right)', ({ nums, n, left, right }) => {
 
 f('rangeSumA($nums, $n, $left, $right)', ({ nums, n, left, right, ans }) => {
     expect(rangeSumA(nums, n, left, right)).toBe(ans);
+});
+
+f('rangeSumB($nums, $n, $left, $right)', ({ nums, n, left, right, ans }) => {
+    expect(rangeSumB(nums, n, left, right)).toBe(ans);
 });
