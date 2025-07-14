@@ -1,4 +1,4 @@
-const { findKthNumber } = require('src/leetcode/n668/solution');
+const { findKthNumber } = require('../../../src/leetcode/n668/solution');
 
 test('test_1', () => {
     expect(findKthNumber(3, 3, 5)).toBe(3);

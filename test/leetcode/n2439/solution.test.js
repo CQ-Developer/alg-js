@@ -1,4 +1,4 @@
-const { minimizeArrayValueA, minimizeArrayValueB } = require('src/leetcode/n2439/solution');
+const { minimizeArrayValueA, minimizeArrayValueB } = require('../../../src/leetcode/n2439/solution');
 
 test('test_1', () => {
     expect(minimizeArrayValueA([3, 7, 1, 6])).toBe(5);

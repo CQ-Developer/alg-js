@@ -1,4 +1,4 @@
-const { maximumSafenessFactor, maximumSafenessFactorA, maximumSafenessFactorB } = require('src/leetcode/n2812/solution');
+const { maximumSafenessFactor, maximumSafenessFactorA, maximumSafenessFactorB } = require('../../../src/leetcode/n2812/solution');
 
 const data = [
     { grid: [[1, 0, 0], [0, 0, 0], [0, 0, 1]], result: 0 },

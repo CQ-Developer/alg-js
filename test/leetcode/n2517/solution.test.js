@@ -1,5 +1,5 @@
 
-const { maximumTastiness } = require('src/leetcode/n2517/solution');
+const { maximumTastiness } = require('../../../src/leetcode/n2517/solution');
 
 const data = [
     { price: [13, 5, 1, 8, 21, 2], k: 3, result: 8 },

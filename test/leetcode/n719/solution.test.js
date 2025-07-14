@@ -1,4 +1,4 @@
-const { smallestDistancePair, smallestDistancePairA, smallestDistancePairB } = require('src/leetcode/n719/solution');
+const { smallestDistancePair, smallestDistancePairA, smallestDistancePairB } = require('../../../src/leetcode/n719/solution');
 
 const cases = [
     { nums: [1, 3, 1], k: 1, ans: 0 },

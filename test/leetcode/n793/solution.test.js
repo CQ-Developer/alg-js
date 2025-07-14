@@ -1,4 +1,4 @@
-const { preimageSizeFZF } = require('src/leetcode/n793/solution');
+const { preimageSizeFZF } = require('../../../src/leetcode/n793/solution');
 
 const data = [
     { k: 0, ans: 5 },

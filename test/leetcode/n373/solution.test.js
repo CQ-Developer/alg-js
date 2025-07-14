@@ -1,4 +1,4 @@
-const { kSmallestPairs, kSmallestPairsA, kSmallestPairsB, kSmallestPairsC } = require('src/leetcode/n373/solution');
+const { kSmallestPairs, kSmallestPairsA, kSmallestPairsB, kSmallestPairsC } = require('../../../src/leetcode/n373/solution');
 
 const data = [
     { nums1: [1, 7, 11], nums2: [2, 4, 6], k: 3, res: [[1, 2], [1, 4], [1, 6]] },

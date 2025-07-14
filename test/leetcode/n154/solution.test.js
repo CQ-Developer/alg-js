@@ -1,4 +1,4 @@
-const { findMin } = require('src/leetcode/n154/solution');
+const { findMin } = require('../../../src/leetcode/n154/solution');
 
 test.each([
     { nums: [1, 3, 5], res: 1 },

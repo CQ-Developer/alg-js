@@ -1,4 +1,4 @@
-const { peakIndexInMountainArray } = require('src/leetcode/n852/solution');
+const { peakIndexInMountainArray } = require('../../../src/leetcode/n852/solution');
 
 test('test_1', () => {
     expect(peakIndexInMountainArray([0, 1, 0])).toBe(1);

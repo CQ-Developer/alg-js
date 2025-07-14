@@ -1,4 +1,4 @@
-const { minLength, minLengthA } = require('src/leetcode/n3399/solution');
+const { minLength, minLengthA } = require('../../../src/leetcode/n3399/solution');
 
 const data = [
     { s: '000001', numOps: 1, res: 2 },

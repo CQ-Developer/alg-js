@@ -1,4 +1,4 @@
-const minimizeMax = require('src/leetcode/n2616/solution');
+const minimizeMax = require('../../../src/leetcode/n2616/solution');
 
 const data = [
     { nums: [10, 1, 2, 7, 1, 3], p: 2, res: 1 },

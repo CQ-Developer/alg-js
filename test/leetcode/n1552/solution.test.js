@@ -1,4 +1,4 @@
-const { maxDistance, maxDistanceA } = require('src/leetcode/n1552/solution');
+const { maxDistance, maxDistanceA } = require('../../../src/leetcode/n1552/solution');
 
 const data = [
     { position: [1, 2, 3, 4, 7], m: 3, result: 3 },

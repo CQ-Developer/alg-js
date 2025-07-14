@@ -1,4 +1,4 @@
-const { kthSmallest, kthSmallestA, kthSmallestB, kthSmallestC } = require('src/leetcode/n1439/solution');
+const { kthSmallest, kthSmallestA, kthSmallestB, kthSmallestC } = require('../../../src/leetcode/n1439/solution');
 
 const data = [
     { mat: [[1, 3, 11], [2, 4, 6]], k: 5, res: 7 },

@@ -1,4 +1,4 @@
-const { solution } = require('src/leetcode/n278/solution');
+const { solution } = require('../../../src/leetcode/n278/solution');
 
 test('test1', () => {
     expect(solution((v) => v >= 4)(5)).toBe(4);

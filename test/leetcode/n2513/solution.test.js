@@ -1,4 +1,4 @@
-const { minimizeSetA } = require('src/leetcode/n2513/solution');
+const { minimizeSetA } = require('../../../src/leetcode/n2513/solution');
 
 const data = [
     { d1: 2, d2: 7, u1: 1, u2: 3, res: 4 },

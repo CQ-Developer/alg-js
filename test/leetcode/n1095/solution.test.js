@@ -1,4 +1,4 @@
-const { findInMountainArray } = require('src/leetcode/n1095/solution');
+const { findInMountainArray } = require('../../../src/leetcode/n1095/solution');
 
 test('test1', () => {
     const arr = [1, 2, 3, 4, 5, 3, 1];

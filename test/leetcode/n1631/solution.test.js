@@ -1,4 +1,4 @@
-const { minimumEffortPathA, minimumEffortPathB, minimumEffortPathC } = require('src/leetcode/n1631/solution.js')
+const { minimumEffortPathA, minimumEffortPathB, minimumEffortPathC } = require('../../../src/leetcode/n1631/solution.js')
 
 
 test('test_1', () => {

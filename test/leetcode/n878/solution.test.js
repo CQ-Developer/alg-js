@@ -1,4 +1,4 @@
-const { nthMagicalNumber } = require('src/leetcode/n878/solution');
+const { nthMagicalNumber } = require('../../../src/leetcode/n878/solution');
 
 const data = [
     { n: 1, a: 2, b: 3, ans: 2 },

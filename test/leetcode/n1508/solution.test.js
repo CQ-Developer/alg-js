@@ -1,4 +1,4 @@
-const { rangeSum, rangeSumA, rangeSumB } = require('src/leetcode/n1508/solution');
+const { rangeSum, rangeSumA, rangeSumB } = require('../../../src/leetcode/n1508/solution');
 
 const data = [
     { nums: [1, 2, 3, 4], n: 4, left: 1, right: 5, ans: 13 },

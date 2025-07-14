@@ -1,4 +1,4 @@
-const { guessNumber } = require('src/leetcode/n374/solution');
+const { guessNumber } = require('../../../src/leetcode/n374/solution');
 
 test('test_1', () => {
     const guess = (x) => x == 6 ? 0 : x > 6 ? -1 : 1;

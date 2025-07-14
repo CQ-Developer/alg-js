@@ -1,4 +1,4 @@
-const { findKthSmallest, findKthSmallestA, findKthSmallestB } = require('src/leetcode/n3116/solution');
+const { findKthSmallest, findKthSmallestA, findKthSmallestB } = require('../../../src/leetcode/n3116/solution');
 
 const data = [
     { coins: [3, 6, 9], k: 3, ans: 9 },

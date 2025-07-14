@@ -1,4 +1,4 @@
-const { maxPower, maxPowerA } = require('src/leetcode/n2528/solution');
+const { maxPower, maxPowerA } = require('../../../src/leetcode/n2528/solution');
 
 const data = [
     { stations: [1, 2, 4, 5, 0], r: 1, k: 2, result: 5 },

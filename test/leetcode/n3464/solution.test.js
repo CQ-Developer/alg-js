@@ -1,4 +1,4 @@
-const { maxDistance, maxDistanceA } = require('src/leetcode/n3464/solution');
+const { maxDistance, maxDistanceA } = require('../../../src/leetcode/n3464/solution');
 
 const data = [
     { side: 2, points: [[0, 2], [2, 0], [2, 2], [0, 0]], k: 4, ans: 2 },

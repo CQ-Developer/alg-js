@@ -1,4 +1,4 @@
-const minimumSize = require('src/leetcode/n1760/solution');
+const minimumSize = require('../../../src/leetcode/n1760/solution');
 
 test('test_1', () => {
     expect(minimumSize([9], 2)).toBe(3);

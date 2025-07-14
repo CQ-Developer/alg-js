@@ -1,4 +1,4 @@
-const { kSum, kSumA, kSumB } = require('src/leetcode/n2386/solution');
+const { kSum, kSumA, kSumB } = require('../../../src/leetcode/n2386/solution');
 
 const data = [
     { nums: [2, 4, -2], k: 5, ans: 2 },

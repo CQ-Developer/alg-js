@@ -1,4 +1,4 @@
-const { medianOfUniquenessArray, medianOfUniquenessArrayA } = require('src/leetcode/n3134/solution');
+const { medianOfUniquenessArray, medianOfUniquenessArrayA } = require('../../../src/leetcode/n3134/solution');
 
 const data = [
     { nums: [1, 2, 3], ans: 1 },

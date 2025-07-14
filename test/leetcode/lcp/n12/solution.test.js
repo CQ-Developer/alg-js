@@ -1,4 +1,4 @@
-const { minTime, minTimeA } = require('src/leetcode/lcp/n12/solution');
+const { minTime, minTimeA } = require('../../../../src/leetcode/lcp/n12/solution')
 
 const data = [
     { time: [1, 2, 3, 3], m: 2, result: 3 },

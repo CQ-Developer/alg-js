@@ -1,4 +1,4 @@
-const { maxScore } = require('src/leetcode/n3449/solution');
+const { maxScore } = require('../../../src/leetcode/n3449/solution');
 
 const data = [
     { points: [2, 4], m: 3, ans: 4 },

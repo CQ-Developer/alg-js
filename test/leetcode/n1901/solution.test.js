@@ -1,4 +1,4 @@
-const { findPeakGrid } = require('src/leetcode/n1901/solution');
+const { findPeakGrid } = require('../../../src/leetcode/n1901/solution');
 
 test('test1', () => {
     expect(findPeakGrid([[1, 4], [3, 2]])).toEqual([0, 1]);

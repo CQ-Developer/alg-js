@@ -1,4 +1,4 @@
-const { swimInWaterA, swimInWaterB, swimInWaterC } = require('src/leetcode/n778/solution');
+const { swimInWaterA, swimInWaterB, swimInWaterC } = require('../../../src/leetcode/n778/solution');
 
 const data = [
     { grid: [[0, 2], [1, 3]], res: 3 },

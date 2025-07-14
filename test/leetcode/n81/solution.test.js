@@ -1,4 +1,4 @@
-const { search, searchA } = require('src/leetcode/n81/solution');
+const { search, searchA } = require('../../../src/leetcode/n81/solution');
 
 test.each([
     { nums: [2, 5, 6, 0, 0, 1, 2], target: 0, expected: true },

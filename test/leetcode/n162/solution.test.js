@@ -1,4 +1,4 @@
-const { findPeakElement } = require('src/leetcode/n162/solution');
+const { findPeakElement } = require('../../../src/leetcode/n162/solution');
 
 test('test1', () => {
     expect(findPeakElement([1, 2, 3, 1])).toBe(2);

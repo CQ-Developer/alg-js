@@ -1,4 +1,4 @@
-const { mySqrt } = require('src/leetcode/n69/solution');
+const { mySqrt } = require('../../../src/leetcode/n69/solution');
 
 const data = [
     { x: 4, y: 2 },

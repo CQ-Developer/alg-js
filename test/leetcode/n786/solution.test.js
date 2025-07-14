@@ -1,4 +1,4 @@
-const { kthSmallestPrimeFraction, kthSmallestPrimeFractionA, kthSmallestPrimeFractionB } = require('src/leetcode/n786/solution');
+const { kthSmallestPrimeFraction, kthSmallestPrimeFractionA, kthSmallestPrimeFractionB } = require('../../../src/leetcode/n786/solution');
 
 const data = [
     { arr: [1, 2, 3, 5], k: 3, ans: [2, 5] },

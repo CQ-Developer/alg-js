@@ -1,4 +1,4 @@
-const { minCapabilityA, minCapabilityB } = require('src/leetcode/n2560/solution');
+const { minCapabilityA, minCapabilityB } = require('../../../src/leetcode/n2560/solution');
 
 const data = [
     { nums: [2, 3, 5, 9], k: 2, res: 5 },

@@ -1,4 +1,4 @@
-const { kthSmallestProduct, kthSmallestProductA } = require('src/leetcode/n2040/solution');
+const { kthSmallestProduct, kthSmallestProductA } = require('../../../src/leetcode/n2040/solution');
 
 const data = [
     { nums1: [2, 5], nums2: [3, 4], k: 2, ans: 8 },
