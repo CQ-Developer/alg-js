@@ -1,4 +1,4 @@
-const { TreeNode, countNodes, countNodesA } = require('src/leetcode/n222/solution');
+const { TreeNode, countNodes, countNodesA, countNodesB } = require('src/leetcode/n222/solution');
 
 test.each([
     {
@@ -21,4 +21,5 @@ test.each([
 ])('countNodes($root)', ({ root, result }) => {
     expect(() => countNodes(root)).toThrow('skip');
     expect(countNodesA(root)).toBe(result);
+    expect(countNodesB(root)).toBe(result);
 });
