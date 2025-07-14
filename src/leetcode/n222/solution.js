@@ -54,4 +54,26 @@ function countNodesB(root) {
     return 0;
 }
 
-module.exports = {TreeNode, countNodes, countNodesA, countNodesB};
+/**
+ * @param {TreeNode} root
+ * @returns {number}
+ */
+function countNodesC(root) {
+    let [l, r] = [0, 0];
+    let cur = root;
+    while (cur) {
+        l++;
+        cur = cur.left;
+    }
+    cur = root;
+    while (cur) {
+        r++;
+        cur = cur.right;
+    }
+    if (l == r) {
+        return 2 ** l - 1;
+    }
+    return countNodesC(root.left) + countNodesC(root.right) + 1;
+}
+
+module.exports = {TreeNode, countNodes, countNodesA, countNodesB, countNodesC};
