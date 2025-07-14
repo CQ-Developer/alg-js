@@ -1,4 +1,4 @@
-const {Queue} = require('@datastructures-js/queue')
+const { Queue } = require('@datastructures-js/queue')
 
 class TreeNode {
 
@@ -76,4 +76,46 @@ function countNodesC(root) {
     return countNodesC(root.left) + countNodesC(root.right) + 1;
 }
 
-module.exports = {TreeNode, countNodes, countNodesA, countNodesB, countNodesC};
+/**
+ * @param {TreeNode} root
+ * @returns {number}
+ */
+function countNodesD(root) {
+    if (!root) {
+        return 0;
+    }
+    let h = 0;
+    for (let node = root.left; node; node = node.left) {
+        h++;
+    }
+
+    /**
+     * @param {number} k
+     * @returns {TreeNode}
+     */
+    function check(k) {
+        let [b, node] = [1 << (h - 1), root];
+        while (node && b) {
+            if ((b & k) == 0) {
+                node = node.left;
+            } else {
+                node = node.right;
+            }
+            b >>= 1;
+        }
+        return node;
+    }
+
+    let [l, r] = [1 << h, 1 << (h + 1)];
+    while (l + 1 < r) {
+        const i = l + Math.floor((r - l) / 2);
+        if (check(i)) {
+            l = i;
+        } else {
+            r = i;
+        }
+    }
+    return l;
+}
+
+module.exports = { TreeNode, countNodes, countNodesA, countNodesB, countNodesC, countNodesD };

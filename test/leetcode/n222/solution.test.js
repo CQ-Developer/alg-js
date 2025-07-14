@@ -1,4 +1,4 @@
-const {TreeNode, countNodes, countNodesA, countNodesB, countNodesC} = require('../../../src/leetcode/n222/solution');
+const { TreeNode, countNodes, countNodesA, countNodesB, countNodesC, countNodesD } = require('../../../src/leetcode/n222/solution');
 
 test.each([
     {
@@ -23,4 +23,5 @@ test.each([
     expect(countNodesA(root)).toBe(result);
     expect(countNodesB(root)).toBe(result);
     expect(countNodesC(root)).toBe(result);
+    expect(countNodesD(root)).toBe(result);
 });
