@@ -24,4 +24,41 @@ function findKthPositiveA(arr, k) {
     return num - 1;
 }
 
-module.exports = { findKthPositive, findKthPositiveA };
+/**
+ * @param {number[]} arr
+ * @param {number} k
+ * @returns {number}
+ */
+function findKthPositiveB(arr, k) {
+    const n = arr.length;
+
+    /**
+     * @param {number} target
+     * @returns {number}
+     */
+    function check(target) {
+        let [l, r] = [-1, n];
+        while (l + 1 < r) {
+            const i = l + Math.floor((r - l) / 2);
+            if (arr[i] >= target) {
+                r = i;
+            } else {
+                l = i;
+            }
+        }
+        return r;
+    }
+
+    let [l, r] = [0, arr.at(-1) + k];
+    while (l + 1 < r) {
+        const num = l + Math.floor((r - l) / 2);
+        if (num - check(num + 1) >= k) {
+            r = num;
+        } else {
+            l = num;
+        }
+    }
+    return r;
+}
+
+module.exports = {findKthPositive, findKthPositiveA, findKthPositiveB};
