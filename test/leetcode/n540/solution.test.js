@@ -1,4 +1,4 @@
-const { singleNonDuplicate } = require('../../../src/leetcode/n540/solution');
+const { singleNonDuplicate, singleNonDuplicateA } = require('../../../src/leetcode/n540/solution');
 
 const f = test.each([
     { nums: [1, 1, 2, 3, 3, 4, 4, 8, 8], result: 2 },
@@ -7,4 +7,8 @@ const f = test.each([
 
 f('singleNonDuplicate($nums)', ({ nums }) => {
     expect(singleNonDuplicate(nums)).toBeUndefined();
+});
+
+f('singleNonDuplicateA($nums)', ({ nums, result }) => {
+    expect(singleNonDuplicateA(nums)).toBe(result);
 });
