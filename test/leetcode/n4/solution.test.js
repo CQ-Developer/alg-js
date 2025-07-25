@@ -1,4 +1,4 @@
-const {findMedianSortedArrays} = require('../../../src/leetcode/n4/solution');
+const {findMedianSortedArrays, findMedianSortedArraysA} = require('../../../src/leetcode/n4/solution');
 
 const f = test.each([
     {nums1: [1, 3], nums2: [2], result: 2},
@@ -7,4 +7,8 @@ const f = test.each([
 
 f('findMedianSortedArrays($nums1, $nums2)', ({nums1, nums2}) => {
     expect(findMedianSortedArrays(nums1, nums2)).toBeUndefined();
+});
+
+f('findMedianSortedArraysA($nums1, $nums2)', ({nums1, nums2, result}) => {
+    expect(findMedianSortedArraysA(nums1, nums2)).toBe(result);
 });
