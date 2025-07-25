@@ -1,4 +1,8 @@
-const {findMedianSortedArrays, findMedianSortedArraysA} = require('../../../src/leetcode/n4/solution');
+const {
+    findMedianSortedArrays,
+    findMedianSortedArraysA,
+    findMedianSortedArraysB
+} = require('../../../src/leetcode/n4/solution');
 
 const f = test.each([
     {nums1: [1, 3], nums2: [2], result: 2},
@@ -11,4 +15,8 @@ f('findMedianSortedArrays($nums1, $nums2)', ({nums1, nums2}) => {
 
 f('findMedianSortedArraysA($nums1, $nums2)', ({nums1, nums2, result}) => {
     expect(findMedianSortedArraysA(nums1, nums2)).toBe(result);
+});
+
+f('findMedianSortedArraysB($nums1, $nums2)', ({nums1, nums2, result}) => {
+    expect(findMedianSortedArraysB(nums1, nums2)).toBe(result);
 });
