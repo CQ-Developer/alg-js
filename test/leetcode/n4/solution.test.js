@@ -1,22 +1,27 @@
 const {
     findMedianSortedArrays,
     findMedianSortedArraysA,
-    findMedianSortedArraysB
+    findMedianSortedArraysB,
+    findMedianSortedArraysC
 } = require('../../../src/leetcode/n4/solution');
 
 const f = test.each([
-    {nums1: [1, 3], nums2: [2], result: 2},
-    {nums1: [1, 2], nums2: [3, 4], result: 2.5}
+    { nums1: [1, 3], nums2: [2], result: 2 },
+    { nums1: [1, 2], nums2: [3, 4], result: 2.5 }
 ]);
 
-f('findMedianSortedArrays($nums1, $nums2)', ({nums1, nums2}) => {
+f('findMedianSortedArrays($nums1, $nums2)', ({ nums1, nums2 }) => {
     expect(findMedianSortedArrays(nums1, nums2)).toBeUndefined();
 });
 
-f('findMedianSortedArraysA($nums1, $nums2)', ({nums1, nums2, result}) => {
+f('findMedianSortedArraysA($nums1, $nums2)', ({ nums1, nums2, result }) => {
     expect(findMedianSortedArraysA(nums1, nums2)).toBe(result);
 });
 
-f('findMedianSortedArraysB($nums1, $nums2)', ({nums1, nums2, result}) => {
+f('findMedianSortedArraysB($nums1, $nums2)', ({ nums1, nums2, result }) => {
     expect(findMedianSortedArraysB(nums1, nums2)).toBe(result);
+});
+
+f('findMedianSortedArraysC($nums1, $nums2)', ({ nums1, nums2, result }) => {
+    expect(findMedianSortedArraysC(nums1, nums2)).toBe(result);
 });
