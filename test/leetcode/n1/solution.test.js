@@ -1,4 +1,4 @@
-const { twoSum } = require('../../../src/leetcode/n1/solution');
+const { twoSum, twoSumA } = require('../../../src/leetcode/n1/solution');
 
 const f = test.each([
     { nums: [2, 7, 11, 15], target: 9, result: [0, 1] },
@@ -8,4 +8,8 @@ const f = test.each([
 
 f('twoSum($nums, $target)', ({ nums, target }) => {
     expect(twoSum(nums, target)).toBeUndefined();
+});
+
+f('twoSumA($nums, $target)', ({ nums, target, result }) => {
+    expect(twoSumA(nums, target)).toEqual(result);
 });
