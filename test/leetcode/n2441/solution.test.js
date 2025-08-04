@@ -1,4 +1,4 @@
-const {findMaxK, findMaxKA} = require('../../../src/leetcode/n2441/solution');
+const {findMaxK, findMaxKA, findMaxKB} = require('../../../src/leetcode/n2441/solution');
 
 const f = test.each([
     {nums: [-1, 2, -3, 3], result: 3},
@@ -12,4 +12,8 @@ f('findMaxK($nums)', ({nums}) => {
 
 f('findMaxKA($nums)', ({nums, result}) => {
     expect(findMaxKA(nums)).toBe(result);
+});
+
+f('findMaxKB($nums)', ({nums, result}) => {
+    expect(findMaxKB(nums)).toBe(result);
 });

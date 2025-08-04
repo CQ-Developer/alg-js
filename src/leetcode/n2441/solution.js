@@ -22,4 +22,22 @@ function findMaxKA(nums) {
     return res;
 }
 
-module.exports = {findMaxK, findMaxKA};
+/**
+ * @param {number[]} nums
+ * @returns {number}
+ */
+function findMaxKB(nums) {
+    nums.sort((a, b) => a - b);
+    for (let [l, r] = [0, nums.length - 1]; l < r && nums[l] < 0 && nums[r] > 0;) {
+        if (-nums[l] < nums[r]) {
+            r--;
+        } else if (-nums[l] > nums[r]) {
+            l++;
+        } else {
+            return nums[r];
+        }
+    }
+    return -1;
+}
+
+module.exports = {findMaxK, findMaxKA, findMaxKB};
