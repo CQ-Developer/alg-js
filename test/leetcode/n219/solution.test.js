@@ -1,4 +1,4 @@
-const {containsNearbyDuplicateA} = require('../../../src/leetcode/n219/solution');
+const {containsNearbyDuplicateA, containsNearbyDuplicateB} = require('../../../src/leetcode/n219/solution');
 
 const f = test.each([
     {nums: [1, 2, 3, 1], k: 3, result: true},
@@ -11,4 +11,8 @@ const f = test.each([
 
 f('containsNearbyDuplicateA($nums, $k)', ({nums, k, result}) => {
     expect(containsNearbyDuplicateA(nums, k)).toBe(result);
+});
+
+f('containsNearbyDuplicateB($nums, $k)', ({nums, k, result}) => {
+    expect(containsNearbyDuplicateB(nums, k)).toBe(result);
 });
