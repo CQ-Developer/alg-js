@@ -4,19 +4,14 @@
  */
 function removeStarsA(s) {
     const a = [];
-    let cnt = 0;
-    for (let i = s.length - 1; i >= 0; i--) {
-        if (s[i] == '*') {
-            cnt++;
+    for (const x of s) {
+        if (x == '*') {
+            a.pop();
         } else {
-            if (cnt > 0) {
-                cnt--;
-            } else {
-                a.push(s[i]);
-            }
+            a.push(x);
         }
     }
-    return a.reverse().join('');
+    return a.join('');
 }
 
 /**
