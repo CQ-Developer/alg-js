@@ -26,7 +26,7 @@ function kthSmallestA(mat, k) {
         }
         res = cur.sort((a, b) => a - b).slice(0, k);
     }
-    return res.at(-1);
+    return res[res.length - 1];
 }
 
 /**
@@ -55,8 +55,8 @@ function kthSmallestB(mat, k) {
     }
     let [l, r] = [0, 0];
     for (const row of mat) {
-        l += row.at(0);
-        r += row.at(-1);
+        l += row[0];
+        r += row[row.length - 1];
     }
     const base = l;
     while (l <= r) {
@@ -101,7 +101,7 @@ function kthSmallestC(mat, k) {
     for (const row of mat.slice(1)) {
         ans = kthSmallestPairs(ans, row);
     }
-    return ans.at(-1);
+    return ans[ans.length - 1];
 }
 
 module.exports = { kthSmallest, kthSmallestA, kthSmallestB, kthSmallestC };

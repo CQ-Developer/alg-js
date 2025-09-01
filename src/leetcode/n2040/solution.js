@@ -94,9 +94,9 @@ function kthSmallestProductA(nums1, nums2, k) {
     const [x, y] = [find(nums1), find(nums2)];
     const arr = [
         nums1[0] * nums2[0],
-        nums1.at(-1) * nums2.at(-1),
-        nums1[0] * nums2.at(-1),
-        nums1.at(-1) * nums2[0]
+        nums1[nums1.length - 1] * nums2[nums2.length - 1],
+        nums1[0] * nums2[nums2.length - 1],
+        nums1[nums1.length - 1] * nums2[0]
     ];
     let [l, r] = [Math.min(...arr), Math.max(...arr)];
     while (l <= r) {

@@ -22,10 +22,10 @@ function finalPricesB(prices) {
     const stack = [0];
     for (let i = prices.length - 1; i >= 0; i--) {
         const x = prices[i];
-        while (stack.length > 1 && x < stack.at(-1)) {
+        while (stack.length > 1 && x < stack[stack.length - 1]) {
             stack.pop();
         }
-        prices[i] -= stack.at(-1);
+        prices[i] -= stack[stack.length - 1];
         stack.push(x);
     }
     return prices;

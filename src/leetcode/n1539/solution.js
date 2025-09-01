@@ -49,7 +49,7 @@ function findKthPositiveB(arr, k) {
         return r;
     }
 
-    let [l, r] = [0, arr.at(-1) + k];
+    let [l, r] = [0, arr[arr.length - 1] + k];
     while (l + 1 < r) {
         const num = l + Math.floor((r - l) / 2);
         if (num - check(num + 1) >= k) {

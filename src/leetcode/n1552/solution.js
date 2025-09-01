@@ -29,7 +29,7 @@ function maxDistanceA(position, m) {
         return cnt >= m;
     }
     position.sort((a, b) => a - b);
-    let [l, r] = [0, position.at(-1) - position.at(0)];
+    let [l, r] = [0, position[position.length - 1] - position[0]];
     while (l <= r) {
         const mid = l + Math.floor((r - l) / 2);
         if (check(mid)) {

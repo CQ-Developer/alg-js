@@ -63,12 +63,12 @@ class StockSpannerB extends StockSpanner {
      * @returns {number}
      */
     next(price) {
-        while (price >= this.stack.at(-1)[1]) {
+        while (price >= this.stack[this.stack.length - 1][1]) {
             this.stack.pop();
         }
         this.day++;
         this.stack.push([this.day, price]);
-        return this.day - this.stack.at(-2)[0];
+        return this.day - this.stack[this.stack.length - 2][0];
     }
 
 }

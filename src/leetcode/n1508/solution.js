@@ -47,8 +47,8 @@ function rangeSumA(nums, n, left, right) {
 function rangeSumB(nums, n, left, right) {
     const [p, pp] = [[0], [0]];
     for (const x of nums) {
-        p.push(p.at(-1) + x);
-        pp.push(pp.at(-1) + p.at(-1));
+        p.push(p[p.length - 1] + x);
+        pp.push(pp[pp.length - 1] + p[p.length - 1]);
     }
 
     /**

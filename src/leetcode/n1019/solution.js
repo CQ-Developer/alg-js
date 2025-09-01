@@ -24,7 +24,7 @@ function nextLargerNodes(head) {
     const stack = [];
     for (let h = head; h; h = h.next) {
         const x = h.val;
-        while (stack.length && x > stack.at(-1)[0]) {
+        while (stack.length && x > stack[stack.length - 1][0]) {
             result[stack.pop()[1]] = x;
         }
         stack.push([x, i++]);

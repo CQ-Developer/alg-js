@@ -14,7 +14,7 @@ function carFleetA(target, position, speed) {
     const stack = [Infinity];
     for (const car of cars) {
         const time = (target - car[0]) / car[1];
-        while (time >= stack.at(-1)) {
+        while (time >= stack[stack.length - 1]) {
             stack.pop();
         }
         stack.push(time);

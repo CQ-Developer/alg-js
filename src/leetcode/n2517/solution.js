@@ -19,7 +19,7 @@ function maximumTastiness(price, k) {
         return cnt >= k;
     }
     price.sort((a, b) => a - b);
-    let [l, r] = [0, price.at(-1) - price.at(0)];
+    let [l, r] = [0, price[price.length - 1] - price[0]];
     while (l <= r) {
         const m = l + Math.floor((r - l) / 2);
         if (check(m)) {

@@ -8,11 +8,11 @@ function dailyTemperatures(temperatures) {
     const stack = [];
     for (let i = n - 1; i >= 0; i--) {
         const x = temperatures[i];
-        while (stack.length > 0 && x >= temperatures[stack.at(-1)]) {
+        while (stack.length > 0 && x >= temperatures[stack[stack.length - 1]]) {
             stack.pop();
         }
         if (stack.length > 0) {
-            result[i] = stack.at(-1) - i;
+            result[i] = stack[stack.length - 1] - i;
         }
         stack.push(i);
     }

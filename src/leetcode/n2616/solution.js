@@ -20,7 +20,7 @@ function minimizeMax(nums, p) {
         }
         return cnt >= p;
     }
-    let [l, r] = [0, nums.at(-1) - nums[0]];
+    let [l, r] = [0, nums[nums.length - 1] - nums[0]];
     while (l < r) {
         const m = l + Math.floor((r - l) / 2);
         if (check(m)) {

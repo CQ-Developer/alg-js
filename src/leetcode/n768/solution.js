@@ -28,11 +28,11 @@ function maxChunksToSortedA(arr) {
 function maxChunksToSortedB(arr) {
     const stack = [];
     for (const x of arr) {
-        if (!stack.length || x >= stack.at(-1)) {
+        if (!stack.length || x >= stack[stack.length - 1]) {
             stack.push(x);
         } else {
             const y = stack.pop();
-            while (stack.length && stack.at(-1) > x) {
+            while (stack.length && stack[stack.length - 1] > x) {
                 stack.pop();
             }
             stack.push(y);

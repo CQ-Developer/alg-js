@@ -8,7 +8,7 @@ function validateStackSequences(pushed, popped) {
     let i = 0;
     for (const x of pushed) {
         stack.push(x);
-        while (stack.length && stack.at(-1) == popped[i]) {
+        while (stack.length && stack[stack.length - 1] == popped[i]) {
             stack.pop();
             i++;
         }
