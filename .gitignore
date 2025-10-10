@@ -1,8 +1,4 @@
-# webstorm
 .idea/
-
-# vscode
 .vscode/
-
-# js
+.devcontainer/
 node_modules/
