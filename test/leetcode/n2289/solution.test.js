@@ -1,4 +1,4 @@
-const { totalSteps } = require('../../../src/leetcode/n2289/solution');
+const { totalStepsA, totalStepsB } = require('../../../src/leetcode/n2289/solution');
 
 /**
  * @param {Function} f
@@ -10,4 +10,5 @@ function testTemplate(f) {
     });
 }
 
-testTemplate(totalSteps);
+testTemplate(totalStepsA);
+testTemplate(totalStepsB);
