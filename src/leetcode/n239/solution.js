@@ -9,13 +9,13 @@ function maxSlidingWindow(nums, k) {
     const ans = [];
     const dq = new Deque();
     for (let r = 0; r < nums.length; r++) {
-        if (dq.front() < r - k + 1) {
-            dq.popFront();
-        }
         while (!dq.isEmpty() && nums[r] > nums[dq.back()]) {
             dq.popBack();
         }
         dq.pushBack(r);
+        if (dq.front() < r - k + 1) {
+            dq.popFront();
+        }
         if (r >= k - 1) {
             ans.push(nums[dq.front()]);
         }
