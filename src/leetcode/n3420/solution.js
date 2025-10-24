@@ -83,4 +83,34 @@ function countNonDecreasingSubarraysA(nums, k) {
     return ans;
 }
 
-module.exports = { countNonDecreasingSubarraysA };
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @returns {number}
+ */
+function countNonDecreasingSubarraysB(nums, k) {
+    /** @type {Deque<number[]>} */
+    const q = new Deque();
+    const n = nums.length;
+    let ans = 0, cnt = 0;
+    for (let r = n - 1, l = n - 1; l >= 0; l--) {
+        let x = nums[l], sz = 1;
+        while (!q.isEmpty() && x >= q.front()[0]) {
+            const [y, m] = q.popFront();
+            sz += m;
+            cnt += (x - y) * m;
+        }
+        q.pushFront([x, sz]);
+        for (; cnt > k; r--) {
+            const tree = q.back();
+            cnt -= tree[0] - nums[r];
+            if (--tree[1] == 0) {
+                q.popBack();
+            }
+        }
+        ans += r - l + 1;
+    }
+    return ans;
+}
+
+module.exports = { countNonDecreasingSubarraysA, countNonDecreasingSubarraysB };
