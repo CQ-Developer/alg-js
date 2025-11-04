@@ -24,7 +24,7 @@ class SolutionA extends Solution {
      * @returns {number}
      */
     maximalRectangle(matrix) {
-        const m = matrix.length, n = matrix[0].length;
+        const n = matrix[0].length;
         const heights = Array.from({ length: n }, () => { return 0; });
 
         /**
@@ -48,9 +48,9 @@ class SolutionA extends Solution {
         };
 
         let mx = 0;
-        for (let i = 0; i < m; i++) {
+        for (const row of matrix) {
             for (let j = 0; j < n; j++) {
-                if (matrix[i][j] == '1') {
+                if (row[j] == '1') {
                     heights[j]++;
                 } else {
                     heights[j] = 0;
