@@ -1,4 +1,4 @@
-const { Solution, SolutionA, SolutionB } = require('../../src/leetcode/n1793/solution');
+const { Solution, SolutionA, SolutionB } = require('../../../src/leetcode/n1793/solution');
 
 
 /**
