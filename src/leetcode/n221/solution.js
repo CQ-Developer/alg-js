@@ -1,5 +1,3 @@
-const { sortedIndex } = require("lodash");
-
 class Solution {
 
     constructor() {
