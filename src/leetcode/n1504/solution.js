@@ -29,4 +29,28 @@ function numSubmatA(mat) {
     return ans;
 }
 
-module.exports = { numSubmatA };
+/**
+ * @param {number[][]} mat
+ * @returns {number}
+ */
+function numSubmatB(mat) {
+    let ans = 0;
+    const m = mat.length, n = mat[0].length;
+    for (let top = 0; top < m; top++) {
+        const a = Array.from({ length: n }, () => { return 0; });
+        for (let i = top; i < m; i++) {
+            const h = i - top + 1;
+            for (let p = -1, j = 0; j < n; j++) {
+                a[j] += mat[i][j];
+                if (a[j] == h) {
+                    ans += j - p;
+                } else {
+                    p = j;
+                }
+            }
+        }
+    }
+    return ans;
+}
+
+module.exports = { numSubmatA, numSubmatB };

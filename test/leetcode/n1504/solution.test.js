@@ -1,4 +1,4 @@
-const { numSubmatA } = require('../../../src/leetcode/n1504/solution');
+const { numSubmatA, numSubmatB } = require('../../../src/leetcode/n1504/solution');
 
 /**
  * @param {function(number[][]): number} f
@@ -15,3 +15,4 @@ function register(f) {
 }
 
 register(numSubmatA);
+register(numSubmatB);
