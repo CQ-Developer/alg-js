@@ -9,7 +9,7 @@ const jestConfig: JestConfigWithTsJest = {
     '^.+\\.(ts|js)$': 'ts-jest'
   },
   testPathIgnorePatterns: ['node_modules'],
-  testMatch: ['<rootDir>/test/**/?(*.)+(spec|test).(ts|js)'],
+  testMatch: ['<rootDir>/(src|test)/**/?(*.)+(spec|test).(ts|js)'],
   verbose: true,
   cache: true
 };
