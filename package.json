@@ -18,6 +18,7 @@
     "@eslint/js": "^9.39.1",
     "@tsconfig/node24": "^24.0.3",
     "@types/jest": "^29.5.14",
+    "@types/lodash": "^4.17.21",
     "eslint": "^9.39.1",
     "eslint-plugin-jsdoc": "^50.6.17",
     "globals": "^16.2.0",
