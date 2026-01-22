@@ -1,4 +1,4 @@
-import { countQuadruplets } from "./solution.ts";
+import { countQuadrupletsA, countQuadrupletsB } from "./solution.ts";
 
 function register(f: (nums: number[]) => number) {
     describe("count increasing quadruplets", () => {
@@ -11,4 +11,5 @@ function register(f: (nums: number[]) => number) {
     });
 }
 
-register(countQuadruplets);
+register(countQuadrupletsA);
+register(countQuadrupletsB);
