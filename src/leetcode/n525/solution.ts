@@ -3,7 +3,7 @@ export function findMaxLengthA(nums: number[]): number {
 
     const ps = Array.from({ length: n }, () => 0);
     for (let i = 0; i < n; i++) {
-        const x = nums[i] ? 1 : -1;
+        const x = nums[i] * 2 - 1;
         ps[i + 1] = ps[i] + x;
     }
 
@@ -25,7 +25,7 @@ export function findMaxLengthB(nums: number[]): number {
     const cnt = new Map<number, number>();
     cnt.set(0, -1);
     nums.forEach((x, i) => {
-        pre += x == 1 ? 1 : -1;
+        pre += x * 2 - 1;
         const j = cnt.get(pre);
         if (j != undefined) {
             ans = Math.max(ans, i - j);
