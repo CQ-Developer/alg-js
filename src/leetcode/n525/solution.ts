@@ -21,16 +21,17 @@ export function findMaxLengthA(nums: number[]): number {
 }
 
 export function findMaxLengthB(nums: number[]): number {
-    const n = nums.length;
-    const map = new Map([[0, -1]]);
-    let mx = 0, ps = 0;
-    for (let i = 0; i < n; i++) {
-        ps += nums[i] ? 1 : -1;
-        if (map.has(ps)) {
-            mx = Math.max(mx, i - map.get(ps)!);
+    let pre = 0, ans = 0;
+    const cnt = new Map<number, number>();
+    cnt.set(0, -1);
+    nums.forEach((x, i) => {
+        pre += x == 1 ? 1 : -1;
+        const j = cnt.get(pre);
+        if (j != undefined) {
+            ans = Math.max(ans, i - j);
         } else {
-            map.set(ps, i);
+            cnt.set(pre, i);
         }
-    }
-    return mx;
+    });
+    return ans;
 }
